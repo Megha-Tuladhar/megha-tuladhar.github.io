@@ -1,24 +1,43 @@
-<!DOCTYPE html>
+<!DOCTYP<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Megha Tuladhar - Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
             font-family: 'Times New Roman', Times, serif;
-            background-color: #6b8e23;
-            color: #c22c3e;
+            color: #800000;
+            overflow: hidden;
+        }
+        video#bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.8) saturate(1.2);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
             text-align: center;
             padding: 50px;
         }
-        h1 {
-            color: #0066cc;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #c12a84;
-            font-size: 1.8em;
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #800000;
         }
         p {
             font-size: 1.2em;
@@ -30,26 +49,25 @@
             width: 200px;
             height: 200px;
             object-fit: cover;
+            border: 3px solid #800000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
             margin: 20px 0;
-            border: 3px solid #0066cc;
         }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+        img:hover {
+            transform: scale(1.05);
         }
         .button {
             background-color: #0066cc;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
-            margin-top: 20px;
             font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
         .button:hover {
             background-color: #004999;
@@ -58,6 +76,9 @@
             margin-top: 40px;
             text-align: left;
             display: inline-block;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 12px;
         }
         .interests li {
             margin: 10px 0;
@@ -67,30 +88,38 @@
 </head>
 <body>
 
-    <h1>Megha Tuladhar</h1>
-    <img src="D0AB0C3F-E71F-4753-8943-97BE389F32E4 2.JPG">
-    
-    <h2>Welcome to My Portfolio</h2>
-    <p>
-        This website is a space to expand my interests in design, data visualization, economics, 
-        and to showcase my other passions and curiosities.
-    </p>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="vecteezy_abstract-textural-iridescent-holographic-background_11979834.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
-    <div class="interests">
-        <h3>Areas of Interest:</h3>
-        <ul>
-            <li>Design</li>
-            <li>Data Visualization</li>
-            <li>Economics</li>
-            <li>Creative Projects & Other Interests</li>
-        </ul>
+    <div class="content">
+        <h1>Megha Tuladhar</h1>
+        <img src="D0AB0C3F-E71F-4753-8943-97BE389F32E4 2.JPG" alt="Megha Tuladhar's Photo">
+        
+        <h2>Welcome to My Portfolio</h2>
+        <p>
+            This website is a space to expand my interests in design, data visualization, economics, 
+            and to showcase my other passions and curiosities.
+        </p>
+
+        <div class="interests">
+            <h3>Areas of Interest:</h3>
+            <ul>
+                <li>Design</li>
+                <li>Data Visualization</li>
+                <li>Economics</li>
+                <li>Creative Projects & Other Interests</li>
+            </ul>
+        </div>
+
+        <br><br>
+
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">
+            <button class="button">Connect on LinkedIn</button>
+        </a>
     </div>
-
-    <br><br>
-
-    <a href="https://www.linkedin.com/in/meghatuladhar/" target="_blank">
-        <button class="button">Connect on LinkedIn</button>
-    </a>
 
 </body>
 </html>
