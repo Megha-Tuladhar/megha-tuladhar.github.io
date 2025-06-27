@@ -1,222 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Megha Tuladhar - Portfolio</title>
-    
-    <!-- Google Font: Exo -->
-    <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            height: 100%;
-            font-family: 'Exo', sans-serif;
-            color: #800000; /* Maroon text */
-            overflow: hidden;
-        }
-        video#bg-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            filter: brightness(0.8) saturate(1.2);
-        }
-        .content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 50px;
-            max-width: 800px;
-            margin: 50px auto;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megha Tuladhar - Portfolio</title>
 
-            /* Water Droplet Look */
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(8px);
-            border-radius: 50px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-        }
-        h1 {
-            color: #800000;
-            font-size: 3em;
-        }
-        h2 {
-            color: #800000;
-            font-size: 2.2em;
-            margin-top: 10px;
-        }
-        h3 {
-            color: #800000;
-            font-size: 1.8em;
-            margin-top: 20px;
-        }
-        p {
-            font-size: 1.3em;
-            max-width: 700px;
-            margin: 20px auto;
-        }
-        img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 3px solid #800000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.6s ease;
-            margin: 20px 0;
-            cursor: pointer;
-        }
+<!-- Google Font: Exo -->
+<link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
 
-        /* Bubble effect triggered after 5s hover */
-        img:hover {
-            transition-delay: 5s;
-            transform: scale(1.2);
-            animation: bubblePop 1s ease;
-        }
-
-        @keyframes bubblePop {
-            0% {
-                transform: scale(1.2);
-            }
-            50% {
-                transform: scale(1.25);
-            }
-            100% {
-                transform: scale(1.2);
-            }
-        }
-
-        .button {
-            background-color: #0066cc;
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.1em;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: #004999;
-        }
-        .interests {
-            margin-top: 40px;
-            text-align: left;
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
-            border-radius: 12px;
-        }
-        .interests li {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .content {
-                padding: 30px 20px;
-                margin: 20px;
-                border-radius: 30px;
-            }
-            h1 {
-                font-size: 2.2em;
-            }
-            h2 {
-                font-size: 1.6em;
-            }
-            h3 {
-                font-size: 1.3em;
-            }
-            p {
-                font-size: 1.1em;
-            }
-            img {
-                width: 140px;
-                height: 140px;
-            }
-            .button {
-                padding: 12px 20px;
-                font-size: 1em;
-            }
-            .interests li {
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.3em;
-            }
-            h3 {
-                font-size: 1.1em;
-            }
-            p {
-                font-size: 1em;
-            }
-            img {
-                width: 120px;
-                height: 120px;
-            }
-            .button {
-                padding: 10px 18px;
-                font-size: 0.9em;
-            }
-            .interests li {
-                font-size: 0.95em;
-            }
-        }
-    </style>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body {
+        height: 100%;
+        font-family: 'Exo', sans-serif;
+        color: #800000;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    video#bg-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(0.8) saturate(1.2);
+    }
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        padding: 20px;
+    }
+    .droplet {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(8px);
+        border-radius: 50px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        padding: 50px;
+        max-width: 800px;
+        transition: transform 1s ease, opacity 1s ease;
+    }
+    h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 2.2em;
+        margin-top: 10px;
+    }
+    p {
+        font-size: 1.3em;
+        max-width: 700px;
+        margin: 20px auto;
+    }
+    img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 3px solid #800000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.6s ease;
+        margin: 20px 0;
+        cursor: pointer;
+    }
+    img:hover {
+        transition-delay: 5s;
+        transform: scale(1.2);
+        animation: bubblePop 1s ease;
+    }
+    @keyframes bubblePop {
+        0% { transform: scale(1.2); }
+        50% { transform: scale(1.25); }
+        100% { transform: scale(1.2); }
+    }
+    .button {
+        background-color: #0066cc;
+        color: white;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1.1em;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+    .button:hover {
+        background-color: #004999;
+    }
+    /* Droplet Animation on Scroll */
+    .hidden {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.8);
+    }
+    .show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+</style>
 </head>
 <body>
+<!-- Background Video -->
+<video autoplay muted loop id="bg-video">
+    <source src="bvecteezy_abstract-textural-iridescent-holographic-background_11979834.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
 
-    <!-- Background Video -->
-    <video autoplay muted loop id="bg-video">
-        <source src="vecteezy_abstract-textural-iridescent-holographic-background_11979834.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-
-    <div class="content">
+<!-- First Droplet Section -->
+<section>
+    <div class="droplet show" id="firstDroplet">
         <h1>Megha Tuladhar</h1>
-        
         <img src="D0AB0C3F-E71F-4753-8943-97BE389F32E4%202.JPG" alt="Megha Tuladhar's Photo">
-        
         <h2>Welcome to My Portfolio</h2>
         <p>
             This website is a space to expand my interests in design, data visualization, economics, 
             and to showcase my other passions and curiosities.
         </p>
+        <a href="#secondDroplet">
+            <button class="button">See My Interests</button>
+        </a>
+    </div>
+</section>
 
-        <div class="interests">
-            <h3>Areas of Interest:</h3>
-            <ul>
-                <li>Design</li>
-                <li>Data Visualization</li>
-                <li>Economics</li>
-                <li>Creative Projects & Other Interests</li>
-            </ul>
-        </div>
-
-        <br><br>
-
+<!-- Second Droplet Section -->
+<section>
+    <div class="droplet hidden" id="secondDroplet">
+        <h2>Areas of Interest</h2>
+        <ul style="list-style: none; padding: 0; margin-top: 20px;">
+            <li style="font-size: 1.2em; margin: 10px 0;">Design</li>
+            <li style="font-size: 1.2em; margin: 10px 0;">Data Visualization</li>
+            <li style="font-size: 1.2em; margin: 10px 0;">Economics</li>
+            <li style="font-size: 1.2em; margin: 10px 0;">Creative Projects & Other Interests</li>
+        </ul>
+        <br>
         <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">
             <button class="button">Connect on LinkedIn</button>
         </a>
     </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    document.querySelectorAll('.droplet').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 
 </body>
 </html>
