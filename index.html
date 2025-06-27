@@ -35,12 +35,32 @@
             z-index: 1;
             text-align: center;
             padding: 50px;
+            max-width: 800px;
+            margin: 50px auto;
+
+            /* Water Droplet Look */
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
         }
-        h1, h2, h3 {
+        h1 {
             color: #800000;
+            font-size: 3em;
+        }
+        h2 {
+            color: #800000;
+            font-size: 2.2em;
+            margin-top: 10px;
+        }
+        h3 {
+            color: #800000;
+            font-size: 1.8em;
+            margin-top: 20px;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             max-width: 700px;
             margin: 20px auto;
         }
@@ -51,20 +71,38 @@
             object-fit: cover;
             border: 3px solid #800000;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            transition: transform 0.6s ease;
             margin: 20px 0;
+            cursor: pointer;
         }
+
+        /* Bubble effect triggered after 5s hover */
         img:hover {
-            transform: scale(1.05);
+            transition-delay: 5s;
+            transform: scale(1.2);
+            animation: bubblePop 1s ease;
         }
+
+        @keyframes bubblePop {
+            0% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1.25);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
         .button {
             background-color: #0066cc;
             color: white;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1.1em;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             transition: background-color 0.3s ease;
             margin-top: 20px;
@@ -82,7 +120,7 @@
         }
         .interests li {
             margin: 10px 0;
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -90,7 +128,7 @@
 
     <!-- Background Video -->
     <video autoplay muted loop id="bg-video">
-        <source src="vecteezy_abstract-textural-iridescent-holographic-background_11979834.mp4" type="video/mp4">
+        <source src="background-video.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
 
