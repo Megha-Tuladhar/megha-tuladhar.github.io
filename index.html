@@ -145,29 +145,26 @@
 </head>
 <body>
 
-<!-- Background Video -->
 <video autoplay muted loop id="bg-video">
-    <source src="vecteezy_abstract-textural-iridescent-holographic-background_11979834.mp4" type="video/mp4">
+    <source src="background vid.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
 </video>
 
-<!-- First Droplet Section -->
 <section>
     <div class="droplet show" id="firstDroplet">
         <h1>Megha Tuladhar</h1>
-        <img src="D0AB0C3F-E71F-4753-8943-97BE389F32E4%202.JPG" alt="Megha Tuladhar's Photo">
+        <img id="profileImage" src="D0AB0C3F-E71F-4753-8943-97BE389F32E4%202.JPG" alt="Megha Tuladhar's Photo">
         <h2>Welcome to My Portfolio</h2>
         <p>
-            This website is a space to expand my interests in design, data visualization, economics, 
+            This website is a space to expand my interests in design, data visualization, economics,
             and to showcase my other passions and curiosities.
         </p>
         <a href="#secondDroplet">
-            <button class="button">See My Interests</button>
+            <button class="button" id="interestsButton">See My Interests</button>
         </a>
     </div>
 </section>
 
-<!-- Second Droplet Section -->
 <section>
     <div class="droplet hidden" id="secondDroplet">
         <h2>Areas of Interest</h2>
@@ -179,12 +176,11 @@
         </ul>
         <br>
         <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">
-            <button class="button">Connect on LinkedIn</button>
+            <button class="button" id="linkedinButton">Connect on LinkedIn</button>
         </a>
     </div>
 </section>
 
-<!-- Water Droplet Sound -->
 <audio id="dropletSound" src="water-droplet.mp3" preload="auto"></audio>
 
 <script>
@@ -192,10 +188,8 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                
                 if (entry.target.id === 'secondDroplet') {
                     entry.target.classList.add('ripple-bounce');
-                    document.getElementById('dropletSound').play();
                 }
             }
         });
@@ -205,6 +199,23 @@
 
     document.querySelectorAll('.droplet').forEach(el => {
         observer.observe(el);
+    });
+
+    const dropletSound = document.getElementById('dropletSound');
+
+    document.getElementById('interestsButton').addEventListener('click', () => {
+        dropletSound.currentTime = 0;
+        dropletSound.play();
+    });
+
+    document.getElementById('linkedinButton').addEventListener('click', () => {
+        dropletSound.currentTime = 0;
+        dropletSound.play();
+    });
+
+    document.getElementById('profileImage').addEventListener('click', () => {
+        dropletSound.currentTime = 0;
+        dropletSound.play();
     });
 </script>
 
